@@ -1,0 +1,18 @@
+.container-logo {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 30vh;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.tittle-p {
+    $fontKanit: 'Kanit', sans-serif;
+    text-align: center; 
+    background-color: black; 
+    color: white; 
+    padding: 20px; 
+}
+
