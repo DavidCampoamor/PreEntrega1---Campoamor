@@ -38,6 +38,33 @@ img {
   text-align: center;
 }
 
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-container img {
+  margin-bottom: 10px;
+}
+
+.product-details {
+  text-align: center;
+}
+
+.product-details button {
+  background-color: #121312;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .container-products {
     grid-template-columns: repeat(1, 1fr);
@@ -98,4 +125,14 @@ button[type=submit] {
 
 button[type=submit]:hover {
   background-color: #0c0c0c;
+}
+
+.iconos-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconos-footer svg {
+  margin: 20px 20px;
 }/*# sourceMappingURL=styles.css.map */
