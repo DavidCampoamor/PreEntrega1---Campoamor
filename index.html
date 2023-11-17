@@ -43,7 +43,7 @@
     <footer>
         <div class="container-form">
             <h1>Carrito de Compras</h1>
-            <form id="carrito-form row">
+            <form id="carrito-form-row">
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required>
@@ -54,10 +54,14 @@
                 </div>
                 <div class="form-group col-md-12">
                     <label for="productos">Productos:</label>
-                    <select id="productos" name="productos" multiple required>
-                    </select>
+                    <div id="productos-container">
+                    </div>
                 </div>
-                <button type="submit">Comprar</button>
+                <div class="form-group">
+                    <label for="precio-total">Precio Total:</label>
+                    <span id="precio-total">0</span>
+                </div>
+                <button type="submit" class="boton-accion">Comprar</button>
             </form>
         </div>
         <div class="iconos-footer d-flex justify-content-center align-items-center">

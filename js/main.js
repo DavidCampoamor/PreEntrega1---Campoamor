@@ -104,26 +104,43 @@ function agregarAlCarrito(index) {
   actualizarProductosSeleccionados();
 }
 
+function eliminarDelCarrito(index) {
+  carrito.splice(index, 1);
+  actualizarProductosSeleccionados();
+}
+
 function actualizarProductosSeleccionados() {
-  const productosSeleccionados = document.getElementById("productos");
-  productosSeleccionados.innerHTML = "";
+  const productosSeleccionadosContainer = document.getElementById("productos-container");
+  productosSeleccionadosContainer.innerHTML = ""; 
+
+  let precioTotal = 0;
 
   carrito.forEach((producto, index) => {
-    const option = document.createElement("option");
-    option.value = index; // Usamos el índice en lugar del nombre para identificar el producto
-    option.text = `${producto.nombre} - $${producto.precio}`;
-    productosSeleccionados.appendChild(option);
+    const div = document.createElement("div");
+    div.classList.add("carrito-item");
 
-    // Botón para eliminar del carrito
+    const productoInfo = document.createElement("p");
+    productoInfo.textContent = `${producto.nombre} - $${producto.precio}`;
+
     const eliminarButton = document.createElement("button");
     eliminarButton.textContent = "Eliminar";
+    eliminarButton.className = "boton-accion";
     eliminarButton.addEventListener("click", () => eliminarDelCarrito(index));
-    productosSeleccionados.appendChild(eliminarButton);
+
+    div.appendChild(productoInfo);
+    div.appendChild(eliminarButton);
+    productosSeleccionadosContainer.appendChild(div);
+
+    precioTotal += producto.precio;
   });
+
+  // Actualizar precio total
+  const precioTotalSpan = document.getElementById("precio-total");
+  precioTotalSpan.textContent = `$${precioTotal}`;
 }
 
 // Envío del formulario
-const carritoForm = document.getElementById("carrito-form");
+const carritoForm = document.getElementById("carrito-form-row");
 carritoForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
