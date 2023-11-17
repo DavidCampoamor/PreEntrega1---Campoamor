@@ -169,4 +169,3 @@ const carritoRecuperado = JSON.parse(carritoAlmacenado);
 function notificar(mensaje) {
   alert(mensaje);
 }
- 
